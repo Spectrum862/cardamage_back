@@ -1,0 +1,50 @@
+{
+	"defaultSeverity": "error",
+	"extends": ["tslint-import-group-ordering"],
+	"jsRules": {},
+	"rules": {
+		"ordered-imports": false,
+		"object-literal-sort-keys": [false],
+		"import-group-ordering": {
+			"severity": "warning",
+			"options": {
+				"imports-groups": [
+					{
+						"name": "dependencies"
+					},
+					{
+						"name": "@workspace"
+					},
+					{
+						"name": "@app"
+					},
+					{
+						"name": "other"
+					}
+				],
+				"matching-rules": [
+					{
+						"type": "project",
+						"matches": "^(@bitkub-nft-platform)",
+						"imports-group": "@workspace"
+					},
+					{
+						"type": "project",
+						"matches": "^(@app)",
+						"imports-group": "@app"
+					},
+					{
+						"type": "project",
+						"matches": "^([.].*)",
+						"imports-group": "other"
+					},
+					{
+						"type": "project",
+						"imports-group": "dependencies",
+						"matches": ".*"
+					}
+				]
+			}
+		}
+	}
+}
