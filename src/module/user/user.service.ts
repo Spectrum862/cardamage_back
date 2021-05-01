@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common'
-import { UserDTO } from '../../model/user/user.dto'
+import { UserDTO } from './dto/user.dto'
 
 const mockUsers: UserDTO[] = [{ id: 'test', password: '1234', name: 'test_name' }]
 
